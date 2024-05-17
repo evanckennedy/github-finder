@@ -23,7 +23,7 @@ function Search() {
       const response = await axios.get(`https://api.github.com/users/${trimmedUsername}`, options);
       if (response.status === 200) {
         setUserFound(true);
-        navigate(`/user/${trimmedUsername}`); // navigate to the user page
+        navigate(`/user/${trimmedUsername}`); // navigate to the user page 
       }
     } catch (error) {
       setUserFound(false)
