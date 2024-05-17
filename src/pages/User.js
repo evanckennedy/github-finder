@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ function User() {
   const [error, setError] = useState(false);
   
   const token = process.env.REACT_APP_GITHUB_TOKEN;
-  const options = {headers: { Authorization: `Bearer ${token}`}};
+  const options = useMemo(() => ({headers: { Authorization: `Bearer ${token}`}}), [token]);
 
   useEffect(() => {
     const getUserAndRepos = async () => {
@@ -27,7 +27,7 @@ function User() {
     }
 
     getUserAndRepos();
-  }, [username]);
+  }, [username, options]);
 
   const formatDate = dateString => {
     const options = { year: 'numeric', month: 'short', day: '2-digit'};
