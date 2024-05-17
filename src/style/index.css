@@ -1,0 +1,233 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Utility Classes                                      */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-10 {
+  gap: 1rem;
+}
+
+.gap-15 {
+  gap: 1.5rem;
+}
+
+.gap-20 {
+  gap: 2rem;
+}
+
+.gap-40 {
+  gap: 4rem;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Base                                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+:root {
+  --app-background-dark: rgb(24, 23, 32);
+  --white: #f5f5f6;
+  --red: #ff6347;
+  --green: #20a771;
+  --github-green: #2dba4e;
+  --purple: #7a01ff;
+}
+
+body {
+  font-family: 'Noto Sans', 'Open Sans', arial, sans-serif;
+}
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Search Page                                          */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.search-container {
+  min-height: 100svh;
+  width: 100%;
+}
+
+.search-content {
+  align-items: center;
+}
+
+.github-icon {
+  * {
+    color: var(--white);
+    font-size: 12rem;
+  }
+}
+
+input[type=text] {
+  width: 26rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 2.5rem;
+  font-size: 1.7rem;
+  background-color: rgb(255 255 255/ 3%);
+  color: var(--white);
+  box-shadow: inset 0 3px 10px -10px rgba(255, 255, 255, 0.3), 0 -5px 10px -10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgb(255 255 255/ 5%);
+  transition: all 0.15s ease-in-out;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  &:focus {
+    border: 1px solid rgb(255 255 255/ 20%);
+  }
+}
+
+.input-message {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.not-found-message {
+  color: var(--red)
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Loader                                               */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 12px solid var(--white);
+  border-top: 12px solid var(--green);
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  User Page                                            */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.user-container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.repo-container {
+  padding: 1.5rem;
+  background-color: rgb(255 255 255/ 3%);
+  border-radius: 0.5rem;
+  box-shadow: inset 0 3px 10px -10px rgba(255, 255, 255, 0.3), 0 -5px 10px -10px rgba(0, 0, 0, 0.3);
+  max-width: 70rem;
+  width: 100%;
+}
+
+.repos-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.public-info {
+  align-items: center;
+}
+
+img {
+  border-radius: 50%;
+  width: 12rem;
+}
+
+.user-name {
+  color: var(--white);
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.user-info {
+  align-items: center;
+
+  * {
+    font-size: 1.4rem;
+  }
+
+  span:nth-child(1) {
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  span:nth-child(2) {
+    color: var(--white);
+    text-transform: uppercase;
+  }
+}
+
+.github-link {
+  background-color: var(--purple);
+  color: var(--white);
+  width: 14rem;
+  font-weight: 500;
+  padding: 0.8rem 0;
+  border-radius: 2.5rem;
+}
+
+
+
+h2 {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+
+
+.repo-date {
+  font-size: 1.4rem;
+  color: #757575;
+  font-family: monospace;
+}
+
+.repo-name {
+  color: var(--green);
+  font-size: 1.7rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.repo-description {
+  color: var(--white);
+}
+
+.fetch-error-message {
+  text-align: center;
+}
