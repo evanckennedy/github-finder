@@ -1,5 +1,5 @@
 import { FaGithub } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 /* 
@@ -14,7 +14,7 @@ function Search() {
   const navigate = useNavigate();
 
   const token = process.env.REACT_APP_GITHUB_TOKEN;
-  const options = {headers: { Authorization: `Bearer ${token}`}};
+  const options = useMemo(() => ({headers: { Authorization: `Bearer ${token}`}}), [token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
