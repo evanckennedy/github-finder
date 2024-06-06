@@ -141,6 +141,18 @@ input[type=text] {
   width: 100%;
   align-items: center;
   padding: 6rem 0;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  font-size: 4rem;
+  cursor: pointer;
+  * {
+    color: var(--white);
+  }
 }
 
 .repo-container {

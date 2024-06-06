@@ -1,6 +1,8 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function User() {
   const { username } = useParams(); // get the username from the URL
@@ -45,6 +47,9 @@ function User() {
   return (
     <>
       <section className='user-container flex flex-column gap-40'>
+        <Link to='/' className='back-button'>
+          <FaArrowLeft/>
+        </Link>
         <div className="public-info flex flex-column gap-15">
           <img src={user.avatar_url} alt="avatar" />
           <p className='user-name'>{user.name}</p>
