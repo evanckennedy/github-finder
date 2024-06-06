@@ -116,9 +116,11 @@ input[type=text] {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .loader {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   border: 12px solid var(--white);
   border-top: 12px solid var(--green);
   border-radius: 50%;

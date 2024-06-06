@@ -34,7 +34,7 @@ function User() {
     return new Date(dateString).toLocaleDateString(undefined, options);
   }
 
-  if (loading) { // if loading is true, display a loading message
+  if (loading) { // if loading is true, display a loader
     return <div className="loader"></div>;
   }
 
